@@ -16,13 +16,13 @@ def insertData():
     korbitResult = requests.get('https://api.korbit.co.kr/v1/ticker/detailed')
 
     #parse data
-    btceData = json.loads(korbitResult.text)
-    korbitData = json.loads(btceResult.text)
+    korbitData = json.loads(korbitResult.text)
+    btceData = json.loads(btceResult.text)
     
     result = {}
     
-    result['korbit']=korbitData
-    result['btce']=btceData
+    result['Korbit']=korbitData
+    result['BTCe']=btceData
     result['time']=time.time()    
     db.btce.insert(result)
     print result
