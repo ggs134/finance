@@ -2,6 +2,7 @@ import requests
 import pymongo
 import json
 import time
+import telepot
 #from bs4 import BeautifulSoup
 
 def insertData():
@@ -38,6 +39,8 @@ def main():
             insertData()
             time.sleep(20)
     except Exception as e:
+        bot = telepot.Bot('155578772:AAGngKO2rPtjzC2_P3CM7FSsL-FIAfzRk8A')
+        bot.sendMessage(33612976, "Error Occured\n"+str(e))
         print e
 
 if __name__=="__main__":
