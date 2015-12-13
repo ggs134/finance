@@ -34,14 +34,15 @@ def getExRate():
     return float(data)
 
 def main():
-    try:
-        while True:
-            insertData()
-            time.sleep(5)
-    except Exception as e:
-        bot = telepot.Bot('155578772:AAGngKO2rPtjzC2_P3CM7FSsL-FIAfzRk8A')
-        bot.sendMessage(33612976, "Error Occured\n"+str(e))
-        print e
+    while True:
+        try:
+            while True:
+                insertData()
+                time.sleep(5)
+        except Exception as e:
+            bot = telepot.Bot('155578772:AAGngKO2rPtjzC2_P3CM7FSsL-FIAfzRk8A')
+            bot.sendMessage(33612976, "Error Occured\n"+str(e))
+            print e
 
 if __name__=="__main__":
     main()
